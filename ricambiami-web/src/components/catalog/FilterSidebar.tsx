@@ -42,8 +42,8 @@ export default function FilterSidebar({
   }
 
   return (
-    /* Su mobile si nasconde; visibile da md in su */
-    <aside className="hidden md:flex flex-col gap-6 w-60 shrink-0">
+    /* Visibile ovunque, su mobile prende tutta la larghezza */
+    <aside className="flex flex-col gap-6 w-full md:w-60 shrink-0">
       {/* ── Header ── */}
       <div className="flex items-center justify-between">
         <h2 className="text-sm font-semibold text-white">Filtri</h2>

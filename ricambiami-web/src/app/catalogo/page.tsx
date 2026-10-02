@@ -121,9 +121,9 @@ export default async function CatalogoPage({ searchParams }: CatalogoPageProps) 
 
         {/* ── Layout principale ──────────────────────────────────────────── */}
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
-          <div className="flex gap-10 items-start">
+          <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-start">
             {/* ── Sidebar filtri (sticky) ──────────────────────────────── */}
-            <div className="sticky top-24">
+            <div className="md:sticky md:top-24 z-10">
               {/*
                 CatalogFilters è client: usa useSearchParams per leggere i
                 parametri correnti e router.push per aggiornarli.
@@ -131,7 +131,7 @@ export default async function CatalogoPage({ searchParams }: CatalogoPageProps) 
               */}
               <Suspense
                 fallback={
-                  <div className="hidden md:block w-60 animate-pulse">
+                  <div className="w-full md:w-60 animate-pulse">
                     <div className="h-4 w-24 rounded bg-white/5 mb-6" />
                     <div className="space-y-3">
                       {[...Array(6)].map((_, i) => (
@@ -206,7 +206,7 @@ export default async function CatalogoPage({ searchParams }: CatalogoPageProps) 
                   </div>
                 </Reveal>
               ) : (
-                <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   {products.map((product, i) => (
                     <Reveal key={product.id} delay={i * 40} direction="up">
                       <ProductCard product={product} />

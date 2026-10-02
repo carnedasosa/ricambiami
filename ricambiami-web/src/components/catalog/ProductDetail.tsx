@@ -252,7 +252,7 @@ export default function ProductDetail({ product, relatedProducts = [] }: Product
             </div>
 
             {/* Garanzie */}
-            <div className="grid grid-cols-3 gap-4 pt-2">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
               {[
                 { Icon: Shield, label: "Qualità garantita" },
                 { Icon: Truck, label: "Spedizione 24/48h" },
